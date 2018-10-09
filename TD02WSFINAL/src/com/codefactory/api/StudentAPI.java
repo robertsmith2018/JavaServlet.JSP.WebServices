@@ -26,6 +26,28 @@ public class StudentAPI extends Application {
 		
 	}
 	
+
+	@POST
+	@Path("/department")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void wsToAddDepartments(Department d) {
+		SchoolManager manager = new SchoolManager();
+		manager.addDepartment(d.getNameDept());
+	}
+		
+	
+	/* //appel:http://localhost:8080/TD02WSFINAL/api/school/department 
+	 * 
+	 * Post
+	 * 
+	 * Postman
+	 * {
+			"nameDept":"Fiscalité"
+		}
+	 */
+			
+			
+		
 	
 	
 }

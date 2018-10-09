@@ -2,6 +2,7 @@ package com.codefactory.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -54,6 +55,19 @@ public class SchoolManager {
 			e.printStackTrace();
 		}
 		return departments;
+		
+	}
+	
+	public void addDepartment(String name) {
+		try {
+			PreparedStatement stmt = con.prepareStatement(Preferences.INSERT_NEW_DEPARTMENT);
+			stmt.setString(1, name);
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 	
