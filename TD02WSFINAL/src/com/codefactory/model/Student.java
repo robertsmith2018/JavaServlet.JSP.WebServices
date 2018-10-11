@@ -26,12 +26,17 @@ public class Student {
 
 
 	public Student(int numStud, String nameStud, int numDept) {
-		super();
+		
 		this.numStud = numStud;
 		this.nameStud = nameStud;
 		this.numDept = numDept;
 	}
-
+	public Student( String nameStud, int numDept) {
+		
+		
+		this.nameStud = nameStud;
+		this.numDept = numDept;
+	}
 
 	public int getNumStud() {
 		return numStud;

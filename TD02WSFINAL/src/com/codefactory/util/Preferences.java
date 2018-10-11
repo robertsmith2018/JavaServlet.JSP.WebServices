@@ -9,5 +9,7 @@ public class Preferences {
 	public static String SELECT_ALL_STUDENTS = "SELECT * FROM student";
 	public static String SELECT_ALL_DEARTMENTS = "SELECT * FROM department";
 	public static String INSERT_NEW_DEPARTMENT = "INSERT INTO department(nameDept) values(?)";
+	public static String INSERT_NEW_STUDENT = "INSERT INTO student( numStud, nameStud, numDept) values( ?, ?, ?)";
+	public static String INSERT_NEW_STUDENT2 = "INSERT INTO student( nameStud, numDept) values( ?, ?)";
 }
 

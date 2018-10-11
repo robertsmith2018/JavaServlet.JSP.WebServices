@@ -4,6 +4,7 @@ import javax.ws.rs.core.Application;
 
 import com.codefactory.model.Department;
 import com.codefactory.model.SchoolManager;
+import com.codefactory.model.Student;
 
 import java.util.List;
 
@@ -43,11 +44,29 @@ public class StudentAPI extends Application {
 	 * Postman
 	 * {
 			"nameDept":"Fiscalité"
-		}
+	   }
 	 */
-			
-			
+	
+	@POST
+	@Path("/student")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String wsToAddStudent(Student s) {
+		SchoolManager manager = new SchoolManager();
+		int result = manager.addStudent(s);
 		
+		if(result == 0 ) {
+			return "Probleme lors de INSERT";
+		}else {
+			return "INSERT avec success";
+		}
+	}
+	/*
+	{
+		"numStud":"8",
+		"nameStud":"Thomas",
+		"numDept":2
+	}
+	*/	
 	
 	
 }

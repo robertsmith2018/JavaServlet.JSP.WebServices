@@ -71,4 +71,20 @@ public class SchoolManager {
 		
 	}
 	
+	public int addStudent(Student student) {
+		try {
+			PreparedStatement stmt = con.prepareStatement(Preferences.INSERT_NEW_STUDENT2);
+		//	stmt.setInt(1, student.getNumStud());
+			stmt.setString(1, student.getNameStud());
+			stmt.setInt(2, student.getNumDept());
+			return stmt.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			return 0;
+		
+	}
 }
