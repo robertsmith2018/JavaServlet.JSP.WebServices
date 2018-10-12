@@ -87,4 +87,18 @@ public class SchoolManager {
 			return 0;
 		
 	}
+	
+
+	
+	public int deleteStudent(int id) {
+		try {
+			PreparedStatement stmt =  con.prepareStatement(Preferences.DELETE_STUDENT);
+			stmt.setInt(1,id);
+			return stmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
 }
